@@ -1,11 +1,13 @@
 const express = require('express')
+const cors = require('cors')
 const utils = require('./utils.js')
 const app = express()
 
 app.set('port', (process.env.PORT || 5000));
+app.use(cors())
 
 app.get('/', function (req, res) {
-  res.json(['Hello World!'])
+  res.json([])
 })
 
 app.get('/sheet/:sheetId', function (req, res) {
