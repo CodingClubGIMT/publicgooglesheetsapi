@@ -1,0 +1,23 @@
+{
+  "name": "publicgooglesheetsapi",
+  "version": "1.0.0",
+  "description": "A self hosted api endpoint for getting data from public google sheets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geekodour/publicgooglesheetsapi.git"
+  },
+  "author": "Hrishikesh Barman <Hrishikesh Barman> (https://geekodour.github.io/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geekodour/publicgooglesheetsapi/issues"
+  },
+  "homepage": "https://github.com/geekodour/publicgooglesheetsapi#readme",
+  "dependencies": {
+    "express": "4.15.4",
+    "gsheet-web": "3.0.1"
+  }
+}
