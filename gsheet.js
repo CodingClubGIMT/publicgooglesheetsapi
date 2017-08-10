@@ -5,7 +5,7 @@ var xml2js = require('xml2js');
 module.exports = (id)=>{
   return new Promise((res, rej)=>{
     request(`https://spreadsheets.google.com/feeds/list/${id}/od6/public/values`, (e, r, b)=>{
-        if(e) throw Error(e);
+        if(e) rej(Error(e));
         var parseString = xml2js.parseString;
         try {
           parseString(b, function (err, result) {

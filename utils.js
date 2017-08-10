@@ -1,4 +1,4 @@
-const gw = require('gsheet-web');
+const gw = require('./gsheet.js');
 
 const gsTojson = sheetId => {
   return new Promise((resolve,reject) => {
@@ -7,7 +7,7 @@ const gsTojson = sheetId => {
           resolve(data);
         })
         .catch(err => {
-          console.log('poop')
+          reject(Error('Invalid sheet id'));
         })
   })
 }

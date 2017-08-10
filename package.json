@@ -18,6 +18,8 @@
   "homepage": "https://github.com/geekodour/publicgooglesheetsapi#readme",
   "dependencies": {
     "express": "4.15.4",
-    "gsheet-web": "3.0.1"
+    "request": "2.81.0",
+    "twodarray": "2.0.0",
+    "xml2js": "0.4.17"
   }
 }
