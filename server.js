@@ -34,7 +34,7 @@ app.get('/lastrow/:sheetId', cache('5 hours'),function (req, res) {
 app.get('/nextevent/:sheetId', cache('5 hours'),function (req, res) {
   utils.gsTojson(req.params.sheetId)
        .then(results => {
-           res.json(results.filter(result => result.next )[0])
+           res.json(results.filter(result => result.next ))
        })
        .catch(err => res.json([]))
 })
