@@ -14,10 +14,27 @@ app.get('/', function (req, res) {
 })
 
 app.get('/sheet/:sheetId', cache('5 hours'),function (req, res) {
-  console.log('only once');
   utils.gsTojson(req.params.sheetId)
        .then(results => {
-         res.json(results)
+         res.json(results.slice(0).reverse())
+       })
+       .catch(err => res.json([]))
+})
+
+app.get('/lastrow/:sheetId', cache('5 hours'),function (req, res) {
+  utils.gsTojson(req.params.sheetId)
+       .then(results => {
+         results.length
+         ? res.json(results[results.length-1])
+         : []
+       })
+       .catch(err => res.json([]))
+})
+
+app.get('/nextevent/:sheetId', cache('5 hours'),function (req, res) {
+  utils.gsTojson(req.params.sheetId)
+       .then(results => {
+           res.json(results.filter(result => result.next )[0])
        })
        .catch(err => res.json([]))
 })
